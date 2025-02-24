@@ -33,6 +33,9 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 DEBUG = bool(os.environ.get("DEBUG", default=0))
 
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS","127.0.0.1").split(",")
+# ALLOWED_HOSTS = [
+#     '172.20.10.2'
+# ]
 
 
 # Application definition
@@ -161,3 +164,30 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_REFRESH_LIFETIME_LATE_USER': timedelta(days=1),
     'SLIDING_TOKEN_LIFETIME_LATE_USER': timedelta(days=30),
 }
+
+# LOGGING = {
+#     "version": 1,
+#     "disable_existing_loggers": False,
+#     "handlers": {
+#         "console": {"class": "logging.StreamHandler"},
+#         "file": {
+#             "class": "logging.handlers.TimedRotatingFileHandler",
+#             "filename": "logs/general.log",
+#             "formatter": "verbose",
+#             'when': 'D',
+#             'backupCount': 10,
+#         },
+#     },
+#     "loggers": {
+#         "": {
+#             "handlers": ["console", "file"],
+#             "level": os.environ.get("DJANGO_LOG_LEVEL", "INFO"),
+#         }
+#     },
+#     "formatters": {
+#         "verbose": {
+#             "format": "{asctime} ({levelname})- {name}- {message}",
+#             "style": "{",
+#         }
+#     },
+# }
