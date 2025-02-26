@@ -63,7 +63,7 @@ WORKDIR /app
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1 
 
-RUN apt update && apt install -y build-essential python3-dev lnav
+RUN apt update && apt install -y build-essential python3-dev
  
 # Upgrade pip and install dependencies
 RUN pip install --upgrade pip 
